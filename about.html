@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Story | Sunstar Engineering Indonesia</title>
+
+    <link href="assets/css/main.css" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #253746;
+            background: #fff;
+        }
+
+        /* NAVBAR */
+        .story-navbar {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: white;
+            border-bottom: 1px solid #e5e9ed;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .story-logo {
+            font-size: 21px;
+            font-weight: bold;
+            color: #073b59;
+            text-decoration: none;
+        }
+
+        .story-home {
+            color: #073b59;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .story-home:hover {
+            color: #0072bc;
+        }
+
+        /* HERO */
+        .story-hero {
+            min-height: 520px;
+            background:
+                linear-gradient(rgba(3, 39, 59, .75),
+                                rgba(3, 39, 59, .75)),
+                url("assets/img/about/about-square-13.webp");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+            padding: 60px 20px;
+        }
+
+        .story-hero .subtitle {
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .story-hero h1 {
+            font-size: clamp(42px, 7vw, 75px);
+            margin: 0 0 20px;
+            font-weight: 700;
+        }
+
+        .story-hero p {
+            max-width: 700px;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* INTRODUCTION */
+        .story-intro {
+            max-width: 1050px;
+            margin: 90px auto;
+            padding: 0 25px;
+            text-align: center;
+        }
+
+        .story-intro h2 {
+            color: #073b59;
+            font-size: 34px;
+            margin-bottom: 20px;
+        }
+
+        .story-intro p {
+            line-height: 1.9;
+            color: #667580;
+            font-size: 16px;
+        }
+
+        /* YEAR NAVIGATION */
+        .year-navigation {
+            position: sticky;
+            top: 64px;
+            z-index: 90;
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: rgba(255,255,255,.96);
+            border-top: 1px solid #edf0f2;
+            border-bottom: 1px solid #edf0f2;
+        }
+
+        .year-navigation a {
+            text-decoration: none;
+            color: #526575;
+            font-size: 13px;
+            font-weight: bold;
+            padding: 10px 16px;
+            border-radius: 25px;
+            transition: .3s;
+        }
+
+        .year-navigation a:hover {
+            background: #073b59;
+            color: white;
+        }
+
+        /* TIMELINE */
+        .history-container {
+            max-width: 1150px;
+            margin: 80px auto;
+            padding: 0 25px;
+        }
+
+        .history-heading {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .history-heading h2 {
+            font-size: 36px;
+            color: #073b59;
+        }
+
+        .history-heading p {
+            color: #7c8992;
+        }
+
+        .history-item {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 110px;
+            scroll-margin-top: 160px;
+        }
+
+        .history-item:nth-child(even) .history-image {
+            order: 2;
+        }
+
+        .history-item:nth-child(even) .history-content {
+            order: 1;
+        }
+
+        .history-image {
+            min-height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: linear-gradient(135deg, #073b59, #0072bc);
+        }
+
+        .history-image img {
+            width: 100%;
+            height: 100%;
+            min-height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .history-content .period {
+            display: inline-block;
+            color: #0072bc;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .history-content h2 {
+            font-size: 32px;
+            color: #073b59;
+            margin: 0 0 15px;
+        }
+
+        .history-content h3 {
+            font-size: 19px;
+            color: #344d60;
+            margin-bottom: 15px;
+        }
+
+        .history-content p {
+            font-size: 15px;
+            color: #6b7882;
+            line-height: 1.9;
+        }
+
+        .history-content .year {
+            display: inline-block;
+            color: white;
+            background: #0072bc;
+            padding: 7px 15px;
+            border-radius: 3px;
+            font-size: 13px;
+            font-weight: bold;
+            margin: 5px 5px 5px 0;
+        }
+
+        /* INDONESIA */
+        .indonesia-section {
+            background: #073b59;
+            color: white;
+            padding: 80px 25px;
+            text-align: center;
+        }
+
+        .indonesia-content {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .indonesia-section .period {
+            color: #8ac8f0;
+            letter-spacing: 3px;
+            font-weight: bold;
+        }
+
+        .indonesia-section h2 {
+            font-size: 38px;
+            margin: 15px 0;
+        }
+
+        .indonesia-section p {
+            color: #dce8ef;
+            line-height: 1.9;
+            font-size: 16px;
+        }
+
+        /* FOOTER */
+        .story-footer {
+            background: #052b40;
+            color: #cbd7df;
+            text-align: center;
+            padding: 25px;
+            font-size: 13px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+
+            .story-hero {
+                min-height: 400px;
+            }
+
+            .story-hero h1 {
+                font-size: 40px;
+            }
+
+            .year-navigation {
+                top: 57px;
+                gap: 3px;
+            }
+
+            .year-navigation a {
+                padding: 8px 10px;
+                font-size: 11px;
+            }
+
+            .history-item {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                margin-bottom: 70px;
+            }
+
+            .history-item:nth-child(even) .history-image,
+            .history-item:nth-child(even) .history-content {
+                order: initial;
+            }
+
+            .history-image,
+            .history-image img {
+                min-height: 230px;
+            }
+
+            .history-content h2 {
+                font-size: 27px;
+            }
+
+            .indonesia-section h2 {
+                font-size: 29px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="story-navbar">
+
+        <a href="index.html" class="story-logo">
+            PT. Sunstar Engineering Indonesia
+        </a>
+
+        <a href="index.html" class="story-home">
+            ← Back to Home
+        </a>
+
+    </nav>
+
+
+    <!-- HERO -->
+    <section class="story-hero">
+
+        <div class="subtitle">
+            About Sunstar
+        </div>
+
+        <h1>Our Story</h1>
+
+        <p>
+            Growing into a global company, from our origins in Japan.
+            More than 90 years of innovation, determination,
+            and continuous development.
+        </p>
+
+    </section>
+
+
+    <!-- INTRODUCTION -->
+    <section class="story-intro">
+
+        <h2>The Sunstar Story</h2>
+
+        <p>
+            Perjalanan Sunstar dimulai lebih dari sembilan dekade
+            lalu di Jepang. Berawal dari inovasi sederhana untuk
+            kebutuhan sepeda, Sunstar berkembang menjadi perusahaan
+            global yang bergerak di bidang consumer products
+            dan industrial business.
+        </p>
+
+        <p>
+            Semangat inovasi dan komitmen terhadap kualitas
+            menjadi bagian penting dalam perjalanan Sunstar
+            hingga saat ini.
+        </p>
+
+    </section>
+
+
+    <!-- YEAR NAVIGATION -->
+    <nav class="year-navigation">
+
+        <a href="#thirties">'30s</a>
+        <a href="#sixties">'60s</a>
+        <a href="#seventies">'70s</a>
+        <a href="#eighties">'80s</a>
+        <a href="#nineties">'90s</a>
+        <a href="#twothousands">'00s</a>
+        <a href="#tens">'10s</a>
+        <a href="#now">NOW</a>
+
+    </nav>
+
+
+    <!-- HISTORY -->
+    <section class="history-container">
+
+        <div class="history-heading">
+            <h2>Our Journey Through Time</h2>
+            <p>Discover the milestones that shaped Sunstar.</p>
+        </div>
+
+
+        <!-- 1930s -->
+        <div class="history-item" id="thirties">
+
+            <div class="history-image">
+                <img src="assets/img/about/1932.webp"
+                     alt="Sunstar early history">
+            </div>
+
+            <div class="history-content">
+
+                <span class="period">1932 – 1959</span>
+
+                <h2>The Beginning</h2>
+
+                <h3>Awal perjalanan Sunstar di Jepang</h3>
+
+                <p>
+                    Pada tahun 1932, pendiri Sunstar, Kunio Kaneda,
+                    mengembangkan lem portabel untuk memperbaiki
+                    ban sepeda. Inovasi ini menjadi awal perjalanan
+                    perusahaan yang kemudian berkembang pesat.
+                </p>
+
+                <p>
+                    Tahun 1946, Sunstar memperkenalkan pasta gigi
+                    dalam kemasan tabung dan menciptakan merek
+                    Sunstar. Pada tahun 1954, produksi gear crank
+                    sepeda dimulai, disusul inovasi produk lainnya.
+                </p>
+
+                <span class="year">1932</span>
+                <span class="year">1946</span>
+                <span class="year">1954</span>
+                <span class="year">1956</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 1960s -->
+        <div class="history-item" id="sixties">
+
+            <div class="history-image">
+                <img src="assets/img/about/60.webp"
+                     alt="Sunstar industrial development">
+            </div>
+
+            <div class="history-content">
+
+                <span class="period">1960 – 1969</span>
+
+                <h2>New Business Areas</h2>
+
+                <h3>Memasuki bidang bisnis baru</h3>
+
+                <p>
+                    Sunstar memperluas bisnisnya ke berbagai bidang.
+                    Selain produk perawatan gigi, perusahaan mulai
+                    mengembangkan komponen sepeda motor dan
+                    produk kimia industri.
+                </p>
+
+                <p>
+                    Pada tahun 1967, Sunstar membentuk kerja sama
+                    Sunstar Essex Chemical Company untuk memproduksi
+                    sealant bagi industri otomotif dan konstruksi.
+                    Tahun 1969, produk Betaseal mulai dipasarkan.
+                </p>
+
+                <span class="year">1961</span>
+                <span class="year">1967</span>
+                <span class="year">1969</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 1970s -->
+        <div class="history-item" id="seventies">
+
+            <div class="history-image">
+                <img src="assets/img/about/70.webp"
+                     alt="Sunstar product development">
+            </div>
+
+            <div class="history-content">
+
+                <span class="period">1970 – 1979</span>
+
+                <h2>Rapid Growth</h2>
+
+                <h3>Perkembangan bisnis yang pesat</h3>
+
+                <p>
+                    Pada dekade ini, Sunstar mengalami pertumbuhan
+                    melalui meningkatnya permintaan sealant otomotif
+                    dan pengembangan komponen sepeda motor.
+                </p>
+
+                <p>
+                    Pada tahun 1976, Sunstar memperoleh pesanan
+                    besar dari Harley-Davidson. Tahun 1978,
+                    produksi massal cakram rem sepeda motor dimulai.
+                </p>
+
+                <span class="year">1976</span>
+                <span class="year">1978</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 1980s -->
+        <div class="history-item" id="eighties">
+
+            <div class="history-image">
+                <img src="assets/img/about/80.webp"
+                     alt="Sunstar global expansion">
+            </div>
+
+            <div class="history-content">
+
+                <span class="period">1980 – 1989</span>
+
+                <h2>Global Expansion</h2>
+
+                <h3>Memperluas jaringan internasional</h3>
+
+                <p>
+                    Sunstar membangun jaringan global dengan
+                    mendirikan fasilitas produksi dan penjualan
+                    komponen sepeda motor, adhesive, dan sealant
+                    di Amerika Serikat serta Thailand.
+                </p>
+
+                <p>
+                    Akuisisi John O. Butler Company dan peluncuran
+                    merek GUM pada tahun 1989 turut memperkuat
+                    perkembangan bisnis global Sunstar.
+                </p>
+
+                <span class="year">1980</span>
+                <span class="year">1989</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 1990s -->
+        <div class="history-item" id="nineties">
+
+            <div class="history-image">
+                <img src="assets/img/about/90.webp"
+                     alt="Sunstar Engineering Indonesia">
+            </div>
+
+            <div class="history-content">
+
+                <span class="period">1990 – 1999</span>
+
+                <h2>Expansion in Asia</h2>
+
+                <h3>Perkembangan bisnis di kawasan Asia</h3>
+
+                <p>
+                    Sunstar memperluas kegiatan bisnisnya
+                    di kawasan Asia dan mengembangkan jaringan
+                    manufaktur serta penjualan internasional.
+                </p>
+
+                <p>
+                    Salah satu tonggak penting pada dekade ini
+                    adalah pendirian Sunstar Engineering Indonesia
+                    pada tahun 1995 untuk memproduksi komponen
+                    sepeda motor.
+                </p>
+
+                <span class="year">1995</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2000s -->
+        <div class="history-item" id="twothousands">
+
+            <div class="history-image">
+                <img src="assets/img/about/2000.webp"
+                     alt="Sunstar business development">
+            </div>
+
+            <div class="history-content">
+
+                <span class="period">2000 – 2009</span>
+
+                <h2>Further Development</h2>
+
+                <h3>Penguatan bisnis internasional</h3>
+
+                <p>
+                    Sunstar terus memperkuat bisnis industri
+                    dan memperluas jangkauan internasional.
+                    Pada tahun 2004, Sunstar mengakuisisi
+                    Braking S.p.A. untuk memperkuat bisnis
+                    komponen sepeda motor.
+                </p>
+
+                <p>
+                    Tahun 2009, fasilitas produksi di Singapura
+                    dibangun sebagai basis produksi komponen
+                    sepeda motor untuk mendukung fasilitas
+                    di Thailand, Indonesia, dan Amerika Serikat.
+                </p>
+
+                <span class="year">2004</span>
+                <span class="year">2009</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- 2010s -->
+        <div class="history-item" id="tens">
+
+            <div class="history-image">
+                <img src="assets/img/about/2010.webp"
+                     alt="Sunstar manufacturing technology">
+            </div>
+
+            <div class="history-content">
+
+                <span class="period">2010 – 2019</span>
+
+                <h2>Global Sunstar</h2>
+
+                <h3>Pengembangan teknologi manufaktur</h3>
+
+                <p>
+                    Sunstar memperluas bisnis komponen logam
+                    otomotif melalui pengembangan produksi
+                    fine blanking di Indonesia dan Thailand
+                    sejak tahun 2014.
+                </p>
+
+                <p>
+                    Pada tahun 2019, Sunstar mengakuisisi
+                    TSUBAMEX untuk memperkuat kemampuan
+                    pemrosesan logam dan teknologi manufaktur.
+                </p>
+
+                <span class="year">2014</span>
+                <span class="year">2019</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- NOW -->
+        <div class="history-item" id="now">
+
+            <div class="history-image">
+                <img src="assets/img/about/2020.webp"
+                     alt="Sunstar today">
+            </div>
+
+            <div class="history-content">
+
+                <span class="period">2020 – PRESENT</span>
+
+                <h2>Sunstar Today</h2>
+
+                <h3>Inovasi dan masa depan</h3>
+
+                <p>
+                    Sunstar terus mengembangkan bisnis global
+                    melalui inovasi produk, penguatan teknologi,
+                    dan peningkatan kemampuan industri.
+                </p>
+
+                <p>
+                    Pada tahun 2023, Sunstar Engineering menerima
+                    dua penghargaan pelanggan. Pada tahun 2024,
+                    bisnis industri terus memperkuat kemampuan
+                    material dan teknologi berkelanjutan,
+                    termasuk water-based adhesives dan
+                    UV-cured FIPG.
+                </p>
+
+                <span class="year">2023</span>
+                <span class="year">2024</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- INDONESIA SECTION -->
+    <section class="indonesia-section">
+
+        <div class="indonesia-content">
+
+            <span class="period">SINCE 1995</span>
+
+            <h2>Sunstar Engineering Indonesia</h2>
+
+            <p>
+                Sunstar Engineering Indonesia didirikan pada
+                tahun 1995 sebagai bagian dari perjalanan
+                perkembangan Sunstar di tingkat global.
+                Perusahaan berperan dalam bidang produksi
+                komponen sepeda motor dan menjadi bagian
+                dari jaringan manufaktur Sunstar.
+            </p>
+
+            <a href="index.html"
+               class="back-button"
+               style="
+               display:inline-block;
+               margin-top:20px;
+               padding:13px 28px;
+               background:#ffffff;
+               color:#073b59;
+               text-decoration:none;
+               border-radius:4px;
+               font-weight:bold;">
+
+                Back to Home
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="story-footer">
+
+        © Sunstar Engineering Indonesia
+
+    </footer>
+
+
+</body>
+</html>

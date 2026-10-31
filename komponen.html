@@ -1,0 +1,524 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Komponen Roda Dua & Roda Empat | Sunstar</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #263746;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    header {
+      background: white;
+      padding: 20px 0;
+      box-shadow: 0 2px 12px #00000012;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      color: #073b59;
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    nav a {
+      color: #073b59;
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    nav a:hover { color: #0072bc; }
+
+    .hero {
+      background: linear-gradient(120deg, #073b59, #0072bc);
+      color: white;
+      padding: 110px 0;
+    }
+
+    .hero small {
+      color: #bce7ff;
+      letter-spacing: 2px;
+      font-weight: bold;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 55px);
+      max-width: 800px;
+      margin: 20px 0;
+    }
+
+    .hero p {
+      max-width: 720px;
+      line-height: 1.8;
+      color: #e5f4ff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 6px;
+      background: white;
+      color: #073b59;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 18px;
+    }
+
+    section { padding: 75px 0; }
+
+    .heading {
+      text-align: center;
+      max-width: 750px;
+      margin: 0 auto 40px;
+    }
+
+    .heading h2 {
+      color: #073b59;
+      font-size: 34px;
+    }
+
+    .heading p {
+      color: #687986;
+      line-height: 1.7;
+    }
+
+    .benefits { background: #f3f9fd; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px #073b5912;
+      border: 1px solid #e7eef3;
+    }
+
+    .card i {
+      font-size: 35px;
+      color: #0072bc;
+    }
+
+    .card h3 {
+      color: #073b59;
+      margin-top: 18px;
+    }
+
+    .card p {
+      color: #687986;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 35px;
+    }
+
+    .tab {
+      border: 1px solid #0072bc;
+      color: #0072bc;
+      background: white;
+      padding: 12px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .tab.active, .tab:hover {
+      background: #0072bc;
+      color: white;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .product {
+      padding: 28px;
+      border: 1px solid #e2ebf1;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px #073b590c;
+      transition: .3s;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px #073b5920;
+    }
+
+    .product i {
+      font-size: 32px;
+      color: #0072bc;
+    }
+
+    .product h3 {
+      color: #073b59;
+      font-size: 17px;
+    }
+
+    .product p {
+      color: #687986;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .product[hidden] { display: none; }
+
+    .technology {
+      background: #f3f9fd;
+    }
+
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .tech-card {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      border: 1px solid #e2ebf1;
+    }
+
+    .tech-card i {
+      font-size: 40px;
+      color: #0072bc;
+    }
+
+    .tech-card h3 {
+      color: #073b59;
+    }
+
+    .tech-card p {
+      color: #687986;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .racing {
+      background: linear-gradient(120deg, #073b59, #0072bc);
+      color: white;
+      text-align: center;
+    }
+
+    .racing h2 { color: white; }
+
+    .racing p {
+      max-width: 700px;
+      margin: auto;
+      color: #e5f4ff;
+      line-height: 1.8;
+    }
+
+    footer {
+      background: #052b42;
+      color: white;
+      padding: 25px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer a {
+      color: white;
+      text-decoration: none;
+    }
+
+    @media(max-width: 750px) {
+      .grid, .products, .tech-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav a { margin: 0 7px; }
+      .hero { padding: 75px 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container navbar">
+    <div class="logo">SUNSTAR ENGINEERING</div>
+
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="#keunggulan">Keunggulan</a>
+      <a href="#produk">Produk</a>
+      <a href="#teknologi">Teknologi</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <small>SOLUSI KOMPONEN KENDARAAN</small>
+
+    <h1>Komponen Roda Dua & Roda Empat</h1>
+
+    <p>
+      Sproket dan rotor cakram motor serta komponen mobil kami
+      berkontribusi agar pengguna motor maupun mobil di seluruh
+      dunia dapat berkendara dengan lebih nyaman dan aman.
+    </p>
+
+    <a href="#produk" class="btn">Jelajahi Produk</a>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section class="benefits" id="keunggulan">
+  <div class="container">
+
+    <div class="heading">
+      <h2>Inovasi Lebih dari Setengah Abad</h2>
+      <p>
+        Komponen roda dua dan roda empat Sunstar diproduksi
+        dengan fokus pada kinerja dan daya tahan.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <div class="card">
+        <i class="bi bi-trophy"></i>
+        <h3>Terpilih oleh yang Terbaik</h3>
+        <p>
+          Selama lebih dari setengah abad, produsen kendaraan
+          roda dua terkemuka dunia telah memilih sproket dan
+          rotor cakram Sunstar.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="bi bi-gear-wide-connected"></i>
+        <h3>Spesialis Pengerjaan Logam</h3>
+        <p>
+          Didukung mesin press 2000 ton, fine-blanking,
+          dan laser-cutting untuk menghasilkan produk
+          logam pelat tebal.
+        </p>
+      </div>
+
+      <div class="card">
+        <i class="bi bi-speedometer2"></i>
+        <h3>Race & Aftermarket</h3>
+        <p>
+          Menghadirkan sproket dan rotor cakram unik
+          dengan merek Sunstar dan Braking untuk kebutuhan
+          racing dan aftermarket.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUK -->
+<section id="produk">
+  <div class="container">
+
+    <div class="heading">
+      <h2>Cari Berdasarkan Bagian</h2>
+      <p>
+        Pilih kategori kendaraan untuk melihat jenis
+        komponen yang dikembangkan Sunstar.
+      </p>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-filter="all">Semua Bagian</button>
+      <button class="tab" data-filter="automotive">Bagian Otomotif</button>
+      <button class="tab" data-filter="motorcycle">Part Sepeda Motor</button>
+      <button class="tab" data-filter="utv">Bagian UTV</button>
+    </div>
+
+    <div class="products">
+
+      <div class="product" data-category="automotive">
+        <i class="bi bi-gear"></i>
+        <h3>Bagian-bagian Mesin</h3>
+        <p>
+          Komponen logam untuk mendukung kebutuhan
+          sistem dan bagian mesin kendaraan.
+        </p>
+      </div>
+
+      <div class="product" data-category="automotive">
+        <i class="bi bi-disc"></i>
+        <h3>Bagian Rem</h3>
+        <p>
+          Komponen untuk mendukung sistem pengereman
+          pada kendaraan.
+        </p>
+      </div>
+
+      <div class="product" data-category="motorcycle">
+        <i class="bi bi-disc"></i>
+        <h3>Disc Rotor Motor</h3>
+        <p>
+          Rotor cakram yang menjadi bagian dari sistem
+          pengereman sepeda motor.
+        </p>
+      </div>
+
+      <div class="product" data-category="motorcycle">
+        <i class="bi bi-gear-wide-connected"></i>
+        <h3>Sproket Motor</h3>
+        <p>
+          Komponen sistem penggerak sepeda motor
+          yang diproduksi dengan teknologi pengerjaan logam.
+        </p>
+      </div>
+
+      <div class="product" data-category="utv">
+        <i class="bi bi-disc"></i>
+        <h3>Disc Rotor UTV</h3>
+        <p>
+          Komponen rotor cakram untuk kebutuhan
+          kendaraan UTV.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TEKNOLOGI -->
+<section class="technology" id="teknologi">
+  <div class="container">
+
+    <div class="heading">
+      <h2>Teknologi Proses Produksi</h2>
+      <p>
+        Keahlian Sunstar dalam pengerjaan logam didukung
+        oleh beberapa teknologi proses produksi.
+      </p>
+    </div>
+
+    <div class="tech-grid">
+
+      <div class="tech-card">
+        <i class="bi bi-hammer"></i>
+        <h3>Press</h3>
+        <p>
+          Teknologi press untuk proses pembentukan
+          komponen logam.
+        </p>
+      </div>
+
+      <div class="tech-card">
+        <i class="bi bi-lightning-charge"></i>
+        <h3>Laser-Cutting</h3>
+        <p>
+          Teknologi pemotongan logam menggunakan
+          laser untuk menghasilkan bentuk komponen.
+        </p>
+      </div>
+
+      <div class="tech-card">
+        <i class="bi bi-bullseye"></i>
+        <h3>Fine-Blanking</h3>
+        <p>
+          Proses pemotongan logam presisi untuk
+          kebutuhan komponen.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- RACING -->
+<section class="racing">
+  <div class="container">
+    <h2>Mendukung Dunia Motor Racing</h2>
+
+    <p>
+      Sproket dan rotor cakram Sunstar banyak digunakan
+      dalam berbagai ajang balap motor terkenal di dunia.
+      Pengalaman di dunia racing juga menjadi bagian
+      dari pengembangan produk Sunstar.
+    </p>
+
+    <a href="index.html#contact" class="btn">Hubungi Kami</a>
+  </div>
+</section>
+
+<footer>
+  <p>© <span id="year"></span> PT Sunstar Engineering Indonesia.</p>
+  <a href="index.html">
+    <i class="bi bi-arrow-left"></i> Kembali ke Beranda
+  </a>
+</footer>
+
+<script>
+  const buttons = document.querySelectorAll(".tab");
+  const products = document.querySelectorAll(".product");
+
+  buttons.forEach(button => {
+    button.addEventListener("click", function () {
+
+      const filter = this.dataset.filter;
+
+      buttons.forEach(btn => btn.classList.remove("active"));
+      this.classList.add("active");
+
+      products.forEach(product => {
+        product.hidden =
+          filter !== "all" &&
+          product.dataset.category !== filter;
+      });
+
+    });
+  });
+
+  document.getElementById("year").textContent =
+    new Date().getFullYear();
+</script>
+
+</body>
+</html>
