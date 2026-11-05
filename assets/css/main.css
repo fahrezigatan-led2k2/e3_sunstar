@@ -3311,6 +3311,7 @@ section,
 }
 
 .custom-category-card {
+  
     width: 215px;
     min-height: 220px;
     padding: 25px 20px;
@@ -3819,5 +3820,177 @@ section,
   .cta-video-image img {
     height: 260px;
   }
+}
+
+/* Membuat tombol Asia, Eropa, Amerika Utara berada di tengah */
+#faq .faq-tabs {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#faq .faq-tabs .nav-pills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Rounded corner kartu Solusi Engineering */
+.cta-buttons.custom-category-buttons .custom-category-card {
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   FOOTER - LAYOUT LEBIH PADAT DAN SEIMBANG
+========================================= */
+
+.footer .footer-top {
+    padding-top: 30px !important;
+    padding-bottom: 15px !important;
+}
+
+.footer .footer-top > .row {
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    column-gap: 8% !important;
+    row-gap: 20px !important;
+}
+
+/* Kolom informasi perusahaan */
+.footer .footer-about {
+    flex: 0 0 48% !important;
+    max-width: 48% !important;
+}
+
+.footer .footer-about .logo span {
+    font-size: 30px !important;
+}
+
+.footer .footer-about p {
+    font-size: 15px !important;
+    line-height: 1.7 !important;
+}
+
+/* Kolom navigasi */
+.footer .footer-links {
+    flex: 0 0 30% !important;
+    max-width: 30% !important;
+    margin-bottom: 0 !important;
+}
+
+.footer .footer-links ul li {
+    padding: 7px 0 !important;
+}
+
+.footer .footer-links ul a {
+    font-size: 16px !important;
+}
+
+/* Ikon media sosial */
+.footer .social-links a {
+    width: 45px !important;
+    height: 45px !important;
+}
+
+/* Copyright */
+.footer .copyright {
+    padding: 12px 0 !important;
+}
+
+.footer .copyright p {
+    font-size: 15px;
+}
+
+/* Tampilan tablet dan HP */
+@media (max-width: 767px) {
+    .footer .footer-top > .row {
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .footer .footer-about,
+    .footer .footer-links {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Memindahkan ikon media sosial ke kanan */
+.footer .footer-about .social-links {
+    display: flex !important;
+    justify-content: flex-end !important;
+    width: 100%;
+    margin-top: 20px;
+    padding-right: 10px;
+}
+
+/* Jarak antar ikon */
+.footer .footer-about .social-links a {
+    margin-right: 0 !important;
+    margin-left: 12px !important;
+}
+/* Warna tulisan kartu saat normal */
+#services .service-info h3 {
+    color: #222222 !important;
+    transition: color 0.3s ease;
+}
+
+/* Warna tulisan saat kartu terkena hover */
+#services .service-card:hover .service-info h3 {
+    color: #ffffff !important;
+}
+
+/* Jika judul masih menggunakan tag a */
+#services .service-info h3 a {
+    color: inherit !important;
+    text-decoration: none;
+}
+
+#services .service-card:hover .service-info h3 a {
+    color: #ffffff !important;
+}
+/* Menampilkan gambar SUNSTAR secara utuh */
+.brand-section .services-image {
+    width: 100%;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.brand-section .services-image img {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    object-position: center;
+    display: block;
+    border-radius: 20px;
+}
+/* Gambar merek PENGUIN dan SUNSTAR */
+.brand-section .services-image,
+#services .services-image {
+    width: 100%;
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.brand-section .services-image img,
+#services .services-image img {
+    display: block;
+    width: 100%;
+    height: auto !important;
+    max-height: none !important;
+    object-fit: contain !important;
+    object-position: center;
+    border-radius: 20px;
+}
+/* Menghilangkan fungsi klik pada tulisan logo header */
+#header .logo {
+    pointer-events: none !important;
+    cursor: default !important;
 }
 
