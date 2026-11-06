@@ -3993,4 +3993,11 @@ section,
     pointer-events: none !important;
     cursor: default !important;
 }
+.cta-video-image {
+    border-radius: 20px;
+    overflow: hidden;
+}
 
+.cta-video-image img {
+    border-radius: 20px;
+}
